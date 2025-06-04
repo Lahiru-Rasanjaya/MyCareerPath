@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="si">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>අධ්‍යාපනික සම්පත් දන්සල | Educational Resources Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sinhala: ["Noto Sans Sinhala", "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.5s ease-out",
+              "fade-in-down": "fadeInDown 0.6s ease-out",
+              "scale-in": "scaleIn 0.3s ease-out",
+              float: "float 3s ease-in-out infinite",
+              glow: "glow 2s ease-in-out infinite alternate",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeInDown: {
+                "0%": { opacity: "0", transform: "translateY(-30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              scaleIn: {
+                "0%": { opacity: "0", transform: "scale(0.9)" },
+                "100%": { opacity: "1", transform: "scale(1)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              glow: {
+                "0%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" },
+                "100%": { boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)" },
+              },
+            },
+            backdropBlur: {
+              xs: "2px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom cursor styles */
+      body {
+        font-family: "Inter", "Noto Sans Sinhala", sans-serif;
+        cursor: default;
+      }
+
+      .cursor-pointer {
+        cursor: pointer;
+      }
+
+      .cursor-help {
+        cursor: help;
+      }
+
+      .cursor-grab {
+        cursor: grab;
+      }
+
+      .cursor-grab:active {
+        cursor: grabbing;
+      }
+
+      /* Premium scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+        border-radius: 10px;
+        border: 2px solid #f1f5f9;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #2563eb, #1e40af);
+      }
+
+      /* Glassmorphism effect */
+      .glass {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+      }
+
+      .glass-dark {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+      }
+
+      /* Premium gradient backgrounds */
+      .bg-premium-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .bg-card-gradient {
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      }
+
+      .bg-card-gradient-dark {
+        background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+      }
+
+      /* Hover effects */
+      .hover-lift {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Premium button styles */
+      .btn-premium {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-premium::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-premium:hover::before {
+        left: 100%;
+      }
+
+      /* Search bar premium styling */
+      .search-premium {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Category badges */
+      .category-badge {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+      }
+
+      /* Floating animation for hero elements */
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Premium shadow variations */
+      .shadow-premium {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .shadow-premium-lg {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Card hover glow effect */
+      .card-glow:hover {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 text-slate-800 dark:text-slate-200 min-h-screen"
+  >
+    <!-- Premium Header with Glassmorphism -->
+    <header
+      id="premiumHeader"
+      class="bg-gray-800 sticky top-0 z-50 shadow-premium"
+    >
+      <div class="container mx-auto px-4 py-6 relative">
+        <!-- ❌ Close Button -->
+        <button
+          onclick="closeHeader()"
+          class="absolute top-2 right-2 text-white hover:text-red-500 text-2xl font-bold"
+        >
+          &times;
+        </button>
+
+        <div class="text-center animate-fade-in-down">
+          <div class="flex items-center justify-center mb-4">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 float-animation"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h1
+                class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent font-inter"
+              >
+                අධ්‍යාපනික සම්පත් දන්සල
+              </h1>
+              <div
+                class="h-1 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-2"
+              ></div>
+            </div>
+          </div>
+          <p class="text-xl text-slate-300 font-medium font-sinhala">
+            සියලුම අධ්‍යාපනික සම්පත් එකම තැනකින් - ප්‍රිමියම් අත්දැකීමක්
+          </p>
+
+          <!-- Premium Search Bar -->
+          <div class="mt-8 max-w-2xl mx-auto">
+            <div class="relative">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="විෂයක් හොයන්න... (Search subjects...)"
+                class="w-full px-6 py-4 pl-14 search-premium rounded-2xl text-slate-700 dark:text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 cursor-text"
+              />
+              <div class="absolute left-5 top-1/2 transform -translate-y-1/2">
+                <svg
+                  class="w-5 h-5 text-slate-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Premium Stats Section -->
+    <section class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
+        <div
+          class="bg-blue-900 rounded-2xl p-6 text-center hover-lift cursor-help"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"
+              ></path>
+            </svg>
+          </div>
+          <h3
+            class="text-2xl font-bold text-slate-800 dark:text-slate-200"
+            id="subjectCount"
+          >
+            56
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 font-sinhala">
+            විෂය ක්ෂේත්‍ර
+          </p>
+        </div>
+
+        <div
+          class="bg-indigo-900 rounded-2xl p-6 text-center hover-lift cursor-help"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">
+            1000+
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 font-sinhala">සම්පත්</p>
+        </div>
+
+        <div
+          class="bg-violet-900 rounded-2xl p-6 text-center hover-lift cursor-help"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">
+            24/7
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 font-sinhala">ප්‍රවේශ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Subject Grid -->
+    <main class="container mx-auto px-4 py-8">
+      <div class="mb-8">
+        <h2
+          class="text-3xl font-bold text-center mb-4 text-slate-800 dark:text-slate-200 font-inter"
+        >
+          විෂය ක්ෂේත්‍ර
+        </h2>
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <button
+            class="category-badge cursor-pointer hover:scale-105 transition-transform"
+            onclick="filterSubjects('all')"
+          >
+            සියල්ල
+          </button>
+          <button
+            class="category-badge cursor-pointer hover:scale-105 transition-transform"
+            onclick="filterSubjects('language')"
+          >
+            භාෂා
+          </button>
+          <button
+            class="category-badge cursor-pointer hover:scale-105 transition-transform"
+            onclick="filterSubjects('science')"
+          >
+            විද්‍යාව
+          </button>
+          <button
+            class="category-badge cursor-pointer hover:scale-105 transition-transform"
+            onclick="filterSubjects('psychology')"
+          >
+            මනෝවිද්‍යාව
+          </button>
+          <button
+            class="category-badge cursor-pointer hover:scale-105 transition-transform"
+            onclick="filterSubjects('business')"
+          >
+            ව්‍යාපාර
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="subject-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      >
+        <!-- Subject cards will be populated by JavaScript -->
+      </div>
+
+      <!-- No results message -->
+      <div id="no-results" class="hidden text-center py-12">
+        <div
+          class="w-24 h-24 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full flex items-center justify-center mx-auto mb-4"
+        >
+          <svg
+            class="w-12 h-12 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
+          </svg>
+        </div>
+        <h3
+          class="text-xl font-semibold text-slate-600 dark:text-slate-400 mb-2"
+        >
+          සොයාගැනීම් නොමැත
+        </h3>
+        <p class="text-slate-500 dark:text-slate-500 font-sinhala">
+          වෙනත් මූල පදයක් උත්සාහ කරන්න
+        </p>
+      </div>
+    </main>
+
+    <!-- Premium Footer -->
+    <footer
+      class="bg-gray-800 mt-16 py-8 border-t border-slate-200 dark:border-slate-700"
+    >
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <div class="flex items-center justify-center mb-4">
+            <div
+              class="w-8 h-8 bg-premium-gradient rounded-lg flex items-center justify-center mr-3"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-lg font-semibold text-slate-800 dark:text-slate-200"
+            >
+              Career Connect Lanka
+            </h3>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 font-sinhala mb-4">
+            &copy; 2025 Career Connect Lanka. සියලුම සම්පත් මුල් අයිතිකරුවන්
+            සතුය.
+          </p>
+          <div class="flex justify-center space-x-6">
+            <!-- WhatsApp Channel -->
+            <a
+              href="https://whatsapp.com/channel/0029VbA7G0O7DAX0mQ7xEY42"
+              target="_blank"
+              class="text-slate-400 hover:text-green-500 transition-colors cursor-pointer"
+              title="Join WhatsApp Channel: Career Connect Lanka"
+            >
+              <!-- WhatsApp Icon SVG -->
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+                <path
+                  d="M16.002 2.93a13.06 13.06 0 00-11.44 19.357L2 30l7.953-2.495a13.06 13.06 0 006.05 1.512h.002c7.213 0 13.077-5.863 13.077-13.078 0-3.492-1.361-6.774-3.832-9.245a13.056 13.056 0 00-9.248-3.765zm0 2.6a10.455 10.455 0 017.375 3.05 10.462 10.462 0 013.048 7.379c0 5.768-4.699 10.468-10.467 10.468a10.46 10.46 0 01-5.35-1.47l-.384-.23-4.721 1.48 1.528-4.596-.25-.396A10.455 10.455 0 0116 5.529zm5.618 12.926c-.31-.155-1.831-.902-2.115-1.005-.283-.104-.49-.155-.696.154-.205.31-.796 1.005-.976 1.21-.18.206-.359.232-.668.077-.31-.154-1.309-.481-2.49-1.535-.921-.821-1.543-1.836-1.723-2.145-.18-.31-.02-.478.135-.633.14-.14.31-.36.465-.54.154-.18.205-.31.31-.515.104-.206.052-.387-.026-.541-.077-.154-.696-1.679-.953-2.306-.25-.602-.505-.52-.696-.53l-.594-.01a1.15 1.15 0 00-.834.387c-.285.309-1.087 1.06-1.087 2.586s1.113 2.999 1.27 3.205c.154.206 2.183 3.337 5.289 4.68.74.319 1.317.51 1.768.652.743.236 1.42.203 1.957.123.597-.089 1.831-.748 2.09-1.47.257-.723.257-1.34.18-1.47-.077-.129-.283-.206-.594-.36z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const clickedSubjects = {};
+
+      function handleClick(event, subjectName, subjectLink) {
+        event.preventDefault(); // href="#" open වීම නතර කරන්න
+
+        if (!clickedSubjects[subjectName]) {
+          // පළවෙනි click එකේ ad එක open කරන්න
+          window.open(
+            "https://www.profitableratecpm.com/yy2p3bs9?key=053c75bb4e9e2399b5c4b42be5007cc2",
+            "_blank"
+          );
+          clickedSubjects[subjectName] = true;
+        } else {
+          // දෙවෙනි click එකේ Google Drive link එක open කරන්න
+          window.open(subjectLink, "_blank");
+        }
+      }
+
+      const subjects = [
+        {
+          name: "English",
+          sinhala: "ඉංග්‍රීසි",
+          link: "https://drive.google.com/drive/folders/1O5-pm2Um9R9P7-hwS6Ub6IugT6cIOvoT",
+          category: "language",
+        },
+        {
+          name: "Econ",
+          sinhala: "ආර්ථික විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1_6vlnGTO_3Io80dPLcNDqxlFbF1NdxPh",
+          category: "business",
+        },
+        {
+          name: "General Test",
+          sinhala: "සාමාන්‍ය පරීක්ෂණය",
+          link: "https://drive.google.com/drive/folders/1oezlsPt5gvzy_t6kskts00SsUDXb079w",
+          category: "other",
+        },
+        {
+          name: "Science",
+          sinhala: "විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1HBM9q-LvgTcilmyRg-1Ur-DbXpusSlOm",
+          category: "science",
+        },
+        {
+          name: "Data Analysis",
+          sinhala: "දත්ත විශ්ලේෂණය",
+          link: "https://drive.google.com/drive/folders/1n5oyxgIv5u-lEXIN7nf_Okgczxs4w8G-",
+          category: "science",
+        },
+        {
+          name: "Anthropology",
+          sinhala: "මානව විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1SUNKyWUAzciBs6GU5XE1Z7qLT8HrcAZ0",
+          category: "science",
+        },
+        {
+          name: "Archeology",
+          sinhala: "පුරාවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1ju5Zmjv0RJNwQKLqq9AZChnCYnu0uYdJ",
+          category: "science",
+        },
+        {
+          name: "Basic Computer",
+          sinhala: "මූලික පරිගණක දැනුම",
+          link: "https://drive.google.com/drive/folders/1DoR3hrAGUouHq6r7ccZ19oi22F8BkoTY",
+          category: "other",
+        },
+        {
+          name: "Bio Psychology",
+          sinhala: "ජීව මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/12KOZ5E9XUs8i-vlhViZYDbcJgeE6eVw3",
+          category: "psychology",
+        },
+        {
+          name: "Buddhist Philosophy",
+          sinhala: "බුද්ධ දර්ශනය",
+          link: "https://drive.google.com/drive/folders/1x4e0CU4aZ-7Md_Xvio1yKcGIfKnBoV_h",
+          category: "other",
+        },
+        {
+          name: "Buddhism",
+          sinhala: "බුදු දහම",
+          link: "https://drive.google.com/drive/folders/1pIqNAqtdLFcdK_1GgSM6ns50ie1gKsix",
+          category: "other",
+        },
+        {
+          name: "Criminology",
+          sinhala: "අපරාධ විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1mifmwvR9AO2ENSoVudhc0wAHt_z1fpX3",
+          category: "other",
+        },
+        {
+          name: "Business Studies",
+          sinhala: "ව්‍යාපාර අධ්‍යයනය",
+          link: "https://drive.google.com/drive/folders/11F_mLPWZrKf1rvS8OviRBW3BAWW3adSB",
+          category: "business",
+        },
+        {
+          name: "IQ & GK",
+          sinhala: "බුද්ධි පරීක්ෂණ සහ සාමාන්‍ය දැනීම",
+          link: "https://drive.google.com/drive/folders/18lI-sfvX2stJ5CovVY_UySxjqBYIrdE9",
+          category: "other",
+        },
+        {
+          name: "International Relations",
+          sinhala: "ජාත්‍යන්තර සබඳතා",
+          link: "https://drive.google.com/drive/folders/1vTgGn1ncqClBpAPJE8dCeL2SPsua2xCt",
+          category: "other",
+        },
+        {
+          name: "Japanese",
+          sinhala: "ජපන්",
+          link: "https://drive.google.com/drive/folders/1CgGxebdb5AO2BghT2Rz37gphruaus0X4",
+          category: "language",
+        },
+        {
+          name: "Law College Entrance",
+          sinhala: "නීති විද්‍යාල ප්‍රවේශය",
+          link: "https://drive.google.com/drive/folders/1FOcwA9-BvZMLJN-cWLpyqF10U2nVIqQ1",
+          category: "other",
+        },
+        {
+          name: "Management",
+          sinhala: "කළමනාකරණය",
+          link: "https://drive.google.com/drive/folders/1bqBC9QA6u4lmGxZy1L1YQvXs5XtKc52u",
+          category: "business",
+        },
+        {
+          name: "Media Studies",
+          sinhala: "මාධ්‍ය අධ්‍යයනය",
+          link: "https://drive.google.com/drive/folders/1aiWtejG7bIwcYvwnMx-yJeLuq4o4XPHp",
+          category: "other",
+        },
+        {
+          name: "Philosophy",
+          sinhala: "දර්ශනය",
+          link: "https://drive.google.com/drive/folders/1i2ztAVHKFyvaYeijCvpZ-iiEJmh8wKxz",
+          category: "other",
+        },
+        {
+          name: "Photoshop",
+          sinhala: "ෆොටෝෂොප්",
+          link: "https://drive.google.com/drive/folders/1F7rnprF4j4_rO_DBpkzPxhleq78vKAvH",
+          category: "other",
+        },
+        {
+          name: "Political Science",
+          sinhala: "දේශපාලන විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1vl8yn08-KY_STHWY8OkdmOHtsx7rKDGM",
+          category: "other",
+        },
+        {
+          name: "Customs Exam",
+          sinhala: "රේගු විභාගය",
+          link: "https://drive.google.com/drive/folders/185joMfJD7aCDmdpo36wI2_y3q_7fGSbH",
+          category: "other",
+        },
+        {
+          name: "Russian",
+          sinhala: "රුසියානු",
+          link: "https://drive.google.com/drive/folders/1156ixEtEXnE5YxrzYpjKg-6L-q25zRYf",
+          category: "language",
+        },
+        {
+          name: "Sociology",
+          sinhala: "සමාජ විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1vn_R66upX8yQUBjPRxw2f5WnayfNDQRr",
+          category: "science",
+        },
+        {
+          name: "SPSS",
+          sinhala: "SPSS",
+          link: "https://drive.google.com/drive/folders/1KK2Q8fMEY-UmdmSSL5COUS0bIP3ObByR",
+          category: "science",
+        },
+        {
+          name: "Tamil",
+          sinhala: "දෙමළ",
+          link: "https://drive.google.com/drive/folders/1t1JfU0OsBcoYiLn2H9sG7XtkFo2Yhgmp",
+          category: "language",
+        },
+        {
+          name: "Korean",
+          sinhala: "කොරියානු",
+          link: "https://drive.google.com/drive/folders/1vSkkn2jkfCeh7ZPttAM4-OfdVXjW75pk",
+          category: "language",
+        },
+        {
+          name: "Child Psychology",
+          sinhala: "ළමා මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1PfNMMDsvDN1-HfQDudsPvAQKWQ2BSOx5",
+          category: "psychology",
+        },
+        {
+          name: "Clinical Psychology",
+          sinhala: "සායනික මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1imZQaQ7eDtDRv18sLX3Juh2ixg5coMWD",
+          category: "psychology",
+        },
+        {
+          name: "Cognitive Psychology",
+          sinhala: "සංජානන මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1PFyoq8I3alf83dgF9V_8lTZ8hVfKuzTR",
+          category: "psychology",
+        },
+        {
+          name: "Counseling",
+          sinhala: "උපදේශනය",
+          link: "https://drive.google.com/drive/folders/1PFyoq8I3alf83dgF9V_8lTZ8hVfKuzTR",
+          category: "psychology",
+        },
+        {
+          name: "Cyber Security",
+          sinhala: "සයිබර් ආරක්ෂණය",
+          link: "https://drive.google.com/drive/folders/16HZJQeaz97H6WDdGJ5Jic2oFxTkyTIfe",
+          category: "other",
+        },
+        {
+          name: "First Aid",
+          sinhala: "ප්‍රථමාධාර",
+          link: "https://drive.google.com/drive/folders/1MuoPGlDaUes5HesRt-gddzWTqTpNZpf5",
+          category: "science",
+        },
+        {
+          name: "Forensic",
+          sinhala: "අධිකරණ වෛද්‍ය විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/16YypRVvaJPZ5xzm0srNThbjkcwfby-sj",
+          category: "science",
+        },
+        {
+          name: "Teacher Exams",
+          sinhala: "ගුරු විභාග",
+          link: "https://drive.google.com/drive/folders/1otToW_HYqY5y9TMvCWvTBwMkUePZNw2-",
+          category: "other",
+        },
+        {
+          name: "Hindi",
+          sinhala: "හින්දි",
+          link: "https://drive.google.com/drive/folders/1O-g9-zzAKYjl2VAOu7Ap6hhgS703qzE1",
+          category: "language",
+        },
+        {
+          name: "HRM",
+          sinhala: "මානව සම්පත් කළමනාකරණය",
+          link: "https://drive.google.com/drive/folders/1zqmQwh8rN5jzX6T_h8fNHMGtTupwqQxa",
+          category: "business",
+        },
+        {
+          name: "IELTS",
+          sinhala: "IELTS",
+          link: "https://drive.google.com/drive/folders/1_OnUrnkXFMV4Fv7AlJlsEfSdvouBbbdA",
+          category: "language",
+        },
+        {
+          name: "General Resources",
+          sinhala: "සාමාන්‍ය සම්පත් (SOP, CV)",
+          link: "https://drive.google.com/drive/u/0/folders/1UVI5yT-5JfMwyHHloxPwkuuPm08L_zBn",
+          category: "other",
+        },
+        {
+          name: "Anatomy & Physiology",
+          sinhala: "ව්‍යුහ විද්‍යාව සහ කායික විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1-hnZpk_Y1Rpc_pec24PjZFEDwo5GS2lL",
+          category: "science",
+        },
+        {
+          name: "Systemic Pharmacology",
+          sinhala: "පද්ධතිමය ඖෂධවේදය",
+          link: "https://drive.google.com/drive/folders/10tbchxPfpYn15xe-I_gOLNXcyAQPhtVv",
+          category: "science",
+        },
+        {
+          name: "Research Methodology",
+          sinhala: "පර්යේෂණ ක්‍රමවේදය",
+          link: "https://drive.google.com/drive/folders/10RtYe0jztmnJaBa0wmarvdg8wNOPjFKL",
+          category: "science",
+        },
+        {
+          name: "Molecular Biology",
+          sinhala: "අණුක ජීව විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1SoKBBZnGX3AjRAodRvMw3-tqc0IDM36T",
+          category: "science",
+        },
+        {
+          name: "Microbiology",
+          sinhala: "ක්ෂුද්‍රජීව විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1FuoTEROCpj2hN43lhSNp_raCYTBlLpY2",
+          category: "science",
+        },
+        {
+          name: "Epidemiology",
+          sinhala: "වසංගතවේදය",
+          link: "https://drive.google.com/drive/folders/1Wc2DVsEtcJzyrcyLRdnXmf4x_x5zxWbR",
+          category: "science",
+        },
+        {
+          name: "Biostatistics",
+          sinhala: "ජීව සංඛ්‍යානය",
+          link: "https://drive.google.com/drive/folders/1XLbR4iOg-QmaElVYvsaXhn2KKLaWnRS4",
+          category: "science",
+        },
+        {
+          name: "Basic Pharmacology",
+          sinhala: "මූලික ඖෂධවේදය",
+          link: "https://drive.google.com/drive/folders/122du-Xijkb9Gf3bDJsqj-Kkyu1YbAMhu",
+          category: "science",
+        },
+        {
+          name: "Applied Microbiology",
+          sinhala: "ව්‍යවහාරික ක්ෂුද්‍රජීව විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1X7ilxcbb7OryOu9YMqlIizlLCq8DBVTO",
+          category: "science",
+        },
+        {
+          name: "Applied Hematology",
+          sinhala: "ව්‍යවහාරික රුධිරවේදය",
+          link: "https://drive.google.com/drive/folders/1WjID95HsV9armu9nGnHWaxLWzXwxK0_x",
+          category: "science",
+        },
+        {
+          name: "Applied Medicine",
+          sinhala: "ව්‍යවහාරික වෛද්‍ය විද්‍යාව",
+          link: "https://drive.google.com/drive/folders/16YeOz7f5ztOyDTE1CQbe7NfaOTvZcThC",
+          category: "science",
+        },
+        {
+          name: "Evaluation Reports",
+          sinhala: "ඇගයීම් වාර්තා",
+          link: "https://drive.google.com/drive/folders/1PKbEyLAZw-vPn_OmE3y-EiGBZsX2JiOz",
+          category: "other",
+        },
+        {
+          name: "Clinical Biochemistry",
+          sinhala: "සායනික ජෛව රසායනය",
+          link: "https://drive.google.com/drive/folders/1bFHPe4Ufy_I7p15YKy8KIW2nHQQngUbV",
+          category: "science",
+        },
+        {
+          name: "Counseling Psychology",
+          sinhala: "උපදේශන මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1-UOkGv5oxmIZvJbY8nvkJcnaCHQ78-YW",
+          category: "psychology",
+        },
+        {
+          name: "Criminal Psychology",
+          sinhala: "අපරාධ මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/13-o3jMKQNAsXm_WMM15lY1sSdFEFbkBC",
+          category: "psychology",
+        },
+        {
+          name: "Education Psychology",
+          sinhala: "අධ්‍යාපන මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/13zWWAGHkQn_88LX4ZQ1sIvC0NChR7aam",
+          category: "psychology",
+        },
+        {
+          name: "Forensic Psychology",
+          sinhala: "අධිකරණ මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/16YypRVvaJPZ5xzm0srNThbjkcwfby-sj",
+          category: "psychology",
+        },
+        {
+          name: "Mindfulness",
+          sinhala: "සිහිය",
+          link: "https://drive.google.com/drive/folders/1oJ2xXLTZ2bzB4w_gqdXDIz-Pe55Cz8Yv",
+          category: "psychology",
+        },
+        {
+          name: "Psychometrics",
+          sinhala: "මනෝමිතිය",
+          link: "https://drive.google.com/drive/folders/1YgXcd8WCgkd5AYDduoddK3hic9CPitCh",
+          category: "psychology",
+        },
+        {
+          name: "Psychotherapy",
+          sinhala: "මනෝ චිකිත්සාව",
+          link: "https://drive.google.com/drive/folders/1VsZpDxnadsEr6-VQDOfEkTTxB_V8shoy",
+          category: "psychology",
+        },
+        {
+          name: "Sexual Psychology",
+          sinhala: "ලිංගික මනෝවිද්‍යාව",
+          link: "https://drive.google.com/drive/folders/1Xd9bzpmnWr7bnOuDxzuvDgJPKbKomHGe",
+          category: "psychology",
+        },
+        {
+          name: "Stress Management",
+          sinhala: "ආතති කළමනාකරණය",
+          link: "https://drive.google.com/drive/folders/1OIE85TfFxLo5l9RWb75ihh81hizNKqlL",
+          category: "psychology",
+        },
+      ];
+
+      let filteredSubjects = [...subjects];
+      let currentFilter = "all";
+
+      function renderSubjects() {
+        const subjectGrid = document.getElementById("subject-grid");
+        const noResults = document.getElementById("no-results");
+
+        if (filteredSubjects.length === 0) {
+          subjectGrid.innerHTML = "";
+          noResults.classList.remove("hidden");
+          return;
+        }
+
+        noResults.classList.add("hidden");
+
+        filteredSubjects.sort((a, b) => a.name.localeCompare(b.name));
+
+        subjectGrid.innerHTML = filteredSubjects
+          .map((subject, index) => {
+            const gradients = [
+              "from-blue-400 to-blue-600",
+              "from-purple-400 to-purple-600",
+              "from-green-400 to-green-600",
+              "from-pink-400 to-pink-600",
+              "from-indigo-400 to-indigo-600",
+              "from-yellow-400 to-yellow-600",
+              "from-red-400 to-red-600",
+              "from-teal-400 to-teal-600",
+            ];
+
+            const gradient = gradients[index % gradients.length];
+
+            return `
+        <a href="#"
+          onclick="handleClick(event, '${subject.name}', '${subject.link}')"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="subject-card group block glass bg-gray-800 rounded-2xl shadow-premium hover-lift card-glow cursor-pointer relative overflow-hidden transition-all duration-500 transform opacity-0">
+
+          <div class="absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+
+          <div class="relative p-6">
+            <div class="w-14 h-14 bg-gradient-to-r ${gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              ${getSubjectIcon(subject.category)}
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 font-inter">
+              ${subject.name}
+            </h3>
+
+            <p class="text-md text-slate-600 dark:text-slate-400 mb-4 font-sinhala leading-relaxed">
+              ${subject.sinhala}
+            </p>
+
+            <div class="flex items-center justify-between">
+              <span class="inline-block px-3 py-1 text-xs font-semibold bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700 text-slate-700 dark:text-slate-300 rounded-full">
+                ${getCategoryName(subject.category)}
+              </span>
+
+              <div class="w-8 h-8 bg-gradient-to-r ${gradient} rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-400 transition-colors duration-300"></div>
+        </a>
+      `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderSubjects();
+        setupSearch && setupSearch(); // ඔයාට setupSearch function තියෙනවා නම් call කරන්න
+        updateSubjectCount && updateSubjectCount(); // ඔයාට updateSubjectCount function තියෙනවා නම් call කරන්න
+
+        // Animate cards
+        setTimeout(() => {
+          const cards = document.querySelectorAll(".subject-card");
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("animate-scale-in");
+            }, index * 50);
+          });
+        }, 300);
+      });
+
+      // Get appropriate icon for each subject category
+      function getSubjectIcon(category) {
+        const icons = {
+          language:
+            '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>',
+          science:
+            '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>',
+          psychology:
+            '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>',
+          business:
+            '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>',
+          other:
+            '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path></svg>',
+        };
+        return icons[category] || icons.other;
+      }
+
+      // Get category display name
+      function getCategoryName(category) {
+        const names = {
+          language: "භාෂාව",
+          science: "විද්‍යාව",
+          psychology: "මනෝවිද්‍යාව",
+          business: "ව්‍යාපාර",
+          other: "වෙනත්",
+        };
+        return names[category] || names.other;
+      }
+
+      // Filter subjects by category
+      function filterSubjects(category) {
+        currentFilter = category;
+
+        if (category === "all") {
+          filteredSubjects = [...subjects];
+        } else {
+          filteredSubjects = subjects.filter(
+            (subject) => subject.category === category
+          );
+        }
+
+        // Update active button style
+        document.querySelectorAll(".category-badge").forEach((btn) => {
+          btn.classList.remove(
+            "bg-gradient-to-r",
+            "from-blue-500",
+            "to-purple-500"
+          );
+          btn.classList.add(
+            "bg-gradient-to-r",
+            "from-yellow-400",
+            "to-orange-500"
+          );
+        });
+
+        event.target.classList.remove(
+          "bg-gradient-to-r",
+          "from-yellow-400",
+          "to-orange-500"
+        );
+        event.target.classList.add(
+          "bg-gradient-to-r",
+          "from-blue-500",
+          "to-purple-500"
+        );
+
+        renderSubjects();
+        updateSubjectCount();
+      }
+
+      // Setup search functionality
+      function setupSearch() {
+        const searchInput = document.getElementById("searchInput");
+
+        searchInput.addEventListener("input", function (e) {
+          const searchTerm = e.target.value.toLowerCase().trim();
+
+          if (searchTerm === "") {
+            // Reset to current filter
+            if (currentFilter === "all") {
+              filteredSubjects = [...subjects];
+            } else {
+              filteredSubjects = subjects.filter(
+                (subject) => subject.category === currentFilter
+              );
+            }
+          } else {
+            // Search within current filter
+            const baseSubjects =
+              currentFilter === "all"
+                ? subjects
+                : subjects.filter(
+                    (subject) => subject.category === currentFilter
+                  );
+
+            filteredSubjects = baseSubjects.filter(
+              (subject) =>
+                subject.name.toLowerCase().includes(searchTerm) ||
+                subject.sinhala.includes(searchTerm)
+            );
+          }
+
+          renderSubjects();
+          updateSubjectCount();
+        });
+      }
+
+      // Update subject count
+      function updateSubjectCount() {
+        document.getElementById("subjectCount").textContent =
+          filteredSubjects.length;
+      }
+
+      // Add scroll-triggered animations
+      window.addEventListener("scroll", function () {
+        const cards = document.querySelectorAll(".subject-card");
+        const windowHeight = window.innerHeight;
+
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+
+          if (cardTop < windowHeight * 0.8) {
+            card.classList.add("opacity-100", "animate-fade-in-up");
+            card.classList.remove("opacity-0");
+          }
+        });
+      });
+
+      // Premium loading animation
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+
+        // Trigger initial scroll check
+        window.dispatchEvent(new Event("scroll"));
+      });
+
+      //header close function
+      function closeHeader() {
+        document.getElementById("premiumHeader").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
